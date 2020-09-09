@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface FeignService {
 
     @GetMapping("/user/info/{id}")
-    public CommonReturn info(@PathVariable(value = "id", required = true) Long id);
+    public CommonReturn info(@PathVariable(value = "id", required = true)Long id);
 
     @GetMapping("/feign/timeout")
     public CommonReturn feignTimeout();

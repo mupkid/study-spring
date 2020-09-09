@@ -21,8 +21,8 @@ public class UserController {
     private String serverPort;
 
     @GetMapping("/info/{id}")
-    public CommonReturn info(@PathVariable(value = "id", required = true) Long id) {
-        return CommonReturn.success(200, "查询成功 Server Port: " + serverPort).put("user", userService.getById(id));
+    public CommonReturn info(@PathVariable(value = "id", required = true)Long id) {
+        return CommonReturn.success(200, "查询成功 Server Port: " +serverPort).put("user", userService.getById(id));
     }
 
     @PostMapping("save")

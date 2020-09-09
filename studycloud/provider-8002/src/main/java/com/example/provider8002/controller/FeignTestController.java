@@ -18,10 +18,10 @@ public class FeignTestController {
     private String serverPort;
 
     @GetMapping("/timeout")
-    public CommonReturn feignTimeout() {
-        try {
+    public CommonReturn feignTimeout(){
+        try{
             TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
+        }catch (InterruptedException e){
             e.printStackTrace();
         }
         return CommonReturn.error(500, "请求超时").put("serverPort", serverPort);

@@ -7,7 +7,7 @@ import java.util.HashMap;
  */
 public class ErrorConsts extends HashMap<String, String> {
 
-    public ErrorConsts() {
+    public ErrorConsts(){
 
     }
 }

@@ -16,12 +16,12 @@ public class HystrixController {
     private HystrixService hystrixService;
 
     @GetMapping("/hystrix/ok/{id}")
-    public String infoOk(@PathVariable("id") Integer id) {
+    public String infoOk(@PathVariable("id") Integer id){
         return hystrixService.infoOk(id);
     }
 
     @GetMapping("/hystrix/timeout/{id}")
-    public String infoTimeout(@PathVariable("id") Integer id) {
+    public String infoTimeout(@PathVariable("id") Integer id){
         return hystrixService.infoTimeout(id);
     }
 }

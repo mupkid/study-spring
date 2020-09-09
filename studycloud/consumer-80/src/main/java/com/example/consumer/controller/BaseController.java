@@ -26,12 +26,12 @@ public class BaseController {
     private DiscoveryClient discoveryClient;
 
     @GetMapping("/user/info")
-    public CommonReturn getUser(@RequestParam("id") String id) {
-        return restTemplate.getForObject("http://provider1/user/info/" + id, CommonReturn.class);
+    public CommonReturn getUser(@RequestParam("id")String id){
+        return restTemplate.getForObject("http://provider1/user/info/"+id, CommonReturn.class);
     }
 
     @GetMapping("/serverlist")
-    public CommonReturn listServer() {
+    public CommonReturn listServer(){
         List<String> services = discoveryClient.getServices();
         CommonReturn commonReturn = CommonReturn.success(200, "查询微服务列表成功");
         for (String service : services) {

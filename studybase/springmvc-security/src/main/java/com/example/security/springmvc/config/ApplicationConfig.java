@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 
 /**
  * 对应web.xml中ContextLoaderListener的配置
- *
  * @author User
  */
 @Configuration

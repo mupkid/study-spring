@@ -20,14 +20,14 @@ public class HystrixController {
     private String serverPort;
 
     @GetMapping("/hystrix/ok/{id}")
-    public String infoOk(@PathVariable("id") Integer id) {
-        String result = hystrixService.info_ok(id);
+    public String infoOk(@PathVariable("id") Integer id){
+        String result= hystrixService.info_ok(id);
         return result;
     }
 
     @GetMapping("/hystrix/timeout/{id}")
-    public String infoTimeout(@PathVariable("id") Integer id) {
-        String result = hystrixService.timeout(id);
+    public String infoTimeout(@PathVariable("id") Integer id){
+        String result= hystrixService.timeout(id);
         return result;
     }
 }

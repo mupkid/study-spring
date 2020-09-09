@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class JvmTest {
 
     @Test
-    public void getHeapMemory() {
+    public void getHeapMemory(){
         Runtime runtime = Runtime.getRuntime();
         System.out.println(runtime.availableProcessors());
         System.out.println(runtime.maxMemory());

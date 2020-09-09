@@ -18,12 +18,12 @@ public class FeignController {
     private FeignService feignService;
 
     @GetMapping("/user/info")
-    public CommonReturn getUser(@RequestParam("id") Long id) {
+    public CommonReturn getUser(@RequestParam("id")Long id){
         return feignService.info(id);
     }
 
     @GetMapping("/feign/timeout")
-    public CommonReturn feignTimeout() {
+    public CommonReturn feignTimeout(){
         //openfeign-ribbon，客户端一般默认等待1秒
         return feignService.feignTimeout();
     }

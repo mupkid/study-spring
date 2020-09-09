@@ -14,8 +14,8 @@ public class LoginController {
     AuthenticationService authenticationService;
 
     @RequestMapping(value = "/login", produces = {"text/plain;charset=UTF-8"})
-    public String login(AuthenticationRequest authenticationRequest) {
+    public String login(AuthenticationRequest authenticationRequest){
         UserDto userDto = authenticationService.authentication(authenticationRequest);
-        return userDto.getUsername() + "登录成功";
+        return userDto.getUsername()+ "登录成功";
     }
 }

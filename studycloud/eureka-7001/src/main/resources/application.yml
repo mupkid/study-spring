@@ -7,7 +7,7 @@ server:
 spring:
   application:
     name: eureka7001
-  # 环境 dev|test|prod
+# 环境 dev|test|prod
   profiles:
     active: dev
 

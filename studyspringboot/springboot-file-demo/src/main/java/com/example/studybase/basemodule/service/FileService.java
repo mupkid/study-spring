@@ -11,7 +11,6 @@ public interface FileService extends IService<FileDO> {
 
     /**
      * 上传base64编码后的文件到本地
-     *
      * @param params
      * @return
      */
