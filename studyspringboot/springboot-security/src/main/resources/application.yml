@@ -1,12 +1,16 @@
 server:
   port: 8080
-  servlet:
-    context-path: /springboot-security
+#  servlet:
+#    context-path: /springboot-security
 
 spring:
   application:
     name: springboot-security
-  mvc:
-    view:
-      prefix: /WEB-INF/views
-      suffix: .jsp
+  thymeleaf:
+    cache: false
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/views
+#      suffix: .jsp
+
+

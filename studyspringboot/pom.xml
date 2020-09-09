@@ -15,6 +15,7 @@
         <module>springboot-web-example</module>
 		<module>springboot-dynamic-source</module>
 		<module>springboot-security</module>
+        <module>springboot-helloworld</module>
     </modules>
 
 	<properties>
