@@ -1,0 +1,8 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: consumer1
+  profiles:
+    active: dev

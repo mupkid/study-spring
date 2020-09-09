@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: provider1-user-info
+          uri: http://localhost:8001
+          predicates:
+            - Path=/user/info/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

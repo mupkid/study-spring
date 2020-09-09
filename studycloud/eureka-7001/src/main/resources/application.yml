@@ -1,0 +1,14 @@
+# Tomcat
+server:
+  port: 7001
+  servlet:
+    context-path: /eureka
+
+spring:
+  application:
+    name: eureka7001
+  # 环境 dev|test|prod
+  profiles:
+    active: dev
+
+

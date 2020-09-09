@@ -1,0 +1,16 @@
+package com.example.provider8002.service.impl;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.provider8002.dao.UserDao;
+import com.example.provider8002.entity.User;
+import com.example.provider8002.service.UserService;
+import org.springframework.stereotype.Service;
+
+@Service("userService")
+public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserService {
+
+    @Override
+    public int saveReturnEffect(User entity) {
+        return getBaseMapper().insert(entity);
+    }
+}
