@@ -7,7 +7,7 @@ public class TestBCrypt {
 
     @Test
     public void test1(){
-        String hashpw = BCrypt.hashpw("123", BCrypt.gensalt());
+        String hashpw = BCrypt.hashpw("123456", BCrypt.gensalt());
         String hashpw2 = BCrypt.hashpw("password", BCrypt.gensalt());
         System.out.println(hashpw);
         System.out.println(hashpw2);

@@ -2,5 +2,5 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <bean id="user " class="com.example.studybase.User" name="user"></bean>
+    <bean id="sysUser " class="com.example.studybase.User" name="sysUser"></bean>
 </beans>

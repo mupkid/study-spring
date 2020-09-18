@@ -8,9 +8,18 @@ spring:
     name: springboot-security
   thymeleaf:
     cache: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/study_spring?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
 #  mvc:
 #    view:
 #      prefix: /WEB-INF/views
 #      suffix: .jsp
 
+mybatis:
+  mapper-locations: classpath*:/mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.example.security.entity
 
