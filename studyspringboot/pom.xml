@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<parent>
-		<artifactId>studyspring</artifactId>
-		<groupId>com.example</groupId>
+		<artifactId>study-spring</artifactId>
+		<groupId>org.ohx</groupId>
 		<version>1.0.0</version>
 	</parent>
 	<artifactId>studyspringboot</artifactId>

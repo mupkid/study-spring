@@ -1,8 +1,0 @@
-server:
-  port: 80
-
-spring:
-  profiles:
-    active: dev
-  application:
-    name: Hystrix-Consumer
