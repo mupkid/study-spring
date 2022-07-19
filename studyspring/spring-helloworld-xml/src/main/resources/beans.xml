@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 引入外部属性文件-->
+    <context:property-placeholder location="classpath*:jdbc.properties"/>
+
+    <!--    普通Bean-->
+    <bean id="user" class="org.ohx.studyspring.entity.User"/>
+
+    <!--    工厂Bean-->
+    <bean id="myFactoryBean" class="org.ohx.studyspring.entity.MyFactoryBean"/>
+
+    <!-- 数据库连接池bean-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <!--        从properties文件中读取配置-->
+        <property name="driverClassName" value="${driverClassName}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+    </bean>
+</beans>
