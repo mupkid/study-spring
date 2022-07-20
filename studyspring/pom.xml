@@ -12,8 +12,8 @@
     <artifactId>studyspring</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-helloworld-xml</module>
-        <module>spring-helloworld-annotation</module>
+        <module>spring-ioc-xml</module>
+        <module>spring-ioc-annotation</module>
         <module>springmvc-security</module>
         <module>spring-spring-security</module>
     </modules>
@@ -57,18 +57,6 @@
             <artifactId>junit-jupiter</artifactId>
             <version>5.8.2</version>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
         </dependency>
     </dependencies>
 </project>

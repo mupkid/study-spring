@@ -1,4 +1,4 @@
-package org.ohx.springhelloworld;
+package org.ohx.studyspring;
 
 import org.junit.jupiter.api.Test;
 import org.ohx.studyspring.entity.Course;
