@@ -16,6 +16,9 @@
         <module>spring-ioc-annotation</module>
         <module>springmvc-security</module>
         <module>spring-spring-security</module>
+        <module>spring-aop-xml</module>
+        <module>spring-aop-annotation</module>
+        <module>spring-jdbctemplate</module>
     </modules>
 
     <properties>
