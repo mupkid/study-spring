@@ -1,13 +1,9 @@
 package org.ohx.springmvcsecurity.springmvc.model;
 
-import lombok.Data;
-
 /**
  * 认证请求参数
  */
-@Data
 public class AuthenticationRequest {
-
     /**
      * 用户名
      */
@@ -17,4 +13,21 @@ public class AuthenticationRequest {
      * 密码
      */
     private String password;
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
