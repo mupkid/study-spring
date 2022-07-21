@@ -5,10 +5,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+
+import javax.sql.DataSource;
 
 /**
  * 使用{@link PropertySource}加载.properties文件，这个注解要放在能被{@link ComponentScan}扫描到的类上，
+ * 相当于&lt;context:property-placeholder&gt;标签。
  * 也可以写一个空类加上专门用{@link PropertySource}注解所有的.properties文件。
  * 使用{@link Value}注解从.properties文件中获取参数
  *
@@ -17,17 +21,17 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @PropertySource({"classpath:jdbc.properties"})
-public class DruidConfig {
-    @Value("${driverClassName}")
+public class DataSourceConfig {
+    @Value("${druid.driverClassName}")
     private String driverClassName;
 
-    @Value("${url}")
+    @Value("${druid.url}")
     private String url;
 
-    @Value("${username}")
+    @Value("${druid.username}")
     private String username;
 
-    @Value("${password}")
+    @Value("${druid.password}")
     private String password;
 
     /**
@@ -38,7 +42,7 @@ public class DruidConfig {
      * @return 数据库连接池对象
      */
     @Bean
-    public DruidDataSource getDataSource() {
+    public DataSource getDataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setDriverClassName(driverClassName);
         druidDataSource.setUrl(url);
@@ -46,5 +50,10 @@ public class DruidConfig {
         druidDataSource.setPassword(password);
 
         return druidDataSource;
+    }
+
+    @Bean
+    public JdbcTemplate getJdbcTemplate(DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
     }
 }

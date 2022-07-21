@@ -19,6 +19,7 @@
         <module>spring-aop-xml</module>
         <module>spring-aop-annotation</module>
         <module>spring-jdbctemplate</module>
+        <module>spring-transaction</module>
     </modules>
 
     <properties>
