@@ -21,4 +21,11 @@
         <property name="username" value="${username}"/>
         <property name="password" value="${password}"/>
     </bean>
+
+    <context:component-scan base-package="org.ohx.studyspring"/>
+
+    <!--    不使用默认filter，使用自定义filter进行扫描Bean-->
+    <!--    <context:component-scan base-package="org.ohx.studyspring" use-default-filters="false">-->
+    <!--        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+    <!--    </context:component-scan>-->
 </beans>
