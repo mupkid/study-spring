@@ -20,6 +20,8 @@
         <module>spring-aop-annotation</module>
         <module>spring-jdbctemplate</module>
         <module>spring-transaction</module>
+        <module>spring-logging</module>
+        <module>spring-webflux</module>
     </modules>
 
     <properties>
