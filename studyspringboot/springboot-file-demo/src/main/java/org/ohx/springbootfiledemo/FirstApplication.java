@@ -10,8 +10,5 @@ public class FirstApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(FirstApplication.class, args);
-
-        String aaa = "aaaa";
-        aaa.matches("^\\S*WA_BASIC_FJ_1001\\S*$");
     }
 }
