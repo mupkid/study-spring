@@ -14,7 +14,9 @@
 		<module>springboot-file-demo</module>
 		<module>springboot-security</module>
         <module>springboot-webflux</module>
-    </modules>
+		<module>springboot-helloworld</module>
+		<module>springboot-web</module>
+	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -44,4 +46,21 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.springframework.boot</groupId>
+							<artifactId>spring-boot-configurationprocessor</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
