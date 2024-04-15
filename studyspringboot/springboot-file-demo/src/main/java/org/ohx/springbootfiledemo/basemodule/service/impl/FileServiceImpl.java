@@ -1,8 +1,7 @@
 package org.ohx.springbootfiledemo.basemodule.service.impl;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.apache.shiro.codec.Base64;
 import org.ohx.springbootfiledemo.basemodule.dao.FileDao;
 import org.ohx.springbootfiledemo.basemodule.entity.FileDO;
 import org.ohx.springbootfiledemo.basemodule.service.FileService;
@@ -16,6 +15,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -89,7 +89,7 @@ public class FileServiceImpl extends ServiceImpl<FileDao, FileDO> implements Fil
         }
 
         //解码文件，使用Shiro的Base64类
-        byte[] decodeFile = Base64.decode(encodeFile);
+        byte[] decodeFile = encodeFile.getBytes(StandardCharsets.UTF_8);
         File file = new File(path, fileName);
 
         try(BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file))) {

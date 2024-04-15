@@ -1,6 +1,6 @@
 package org.ohx.springbootfiledemo.basemodule.service;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.ohx.springbootfiledemo.basemodule.entity.FileDO;
 import org.springframework.web.multipart.MultipartFile;
