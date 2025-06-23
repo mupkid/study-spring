@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -13,12 +16,14 @@ class MyServiceTest {
     private MyService myService;
 
     @Test
-    void asyncMethodWithDefaultThreadPool() {
-        myService.asyncMethodWithDefaultThreadPool();
+    void asyncMethodWithDefaultThreadPool() throws ExecutionException, InterruptedException {
+        CompletableFuture<String> stringCompletableFuture = myService.asyncMethodWithDefaultThreadPool();
+        System.out.println(stringCompletableFuture.get());
     }
 
     @Test
-    void asyncMethodWithCustomThreadPool() {
-        myService.asyncMethodWithCustomThreadPool();
+    void asyncMethodWithCustomThreadPool() throws ExecutionException, InterruptedException {
+        CompletableFuture<String> stringCompletableFuture = myService.asyncMethodWithDefaultThreadPool();
+        System.out.println(stringCompletableFuture.get());
     }
 }

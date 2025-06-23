@@ -3,11 +3,13 @@ package org.ohx.springbootasync.service;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.CompletableFuture;
+
 @Service
 public class MyService {
 
     @Async
-    public void asyncMethodWithDefaultThreadPool() {
+    public CompletableFuture<String> asyncMethodWithDefaultThreadPool() {
         System.out.println("开始执行异步方法，线程：" + Thread.currentThread().getName() + "，时间："
                 + System.currentTimeMillis());
         try {
@@ -16,10 +18,11 @@ public class MyService {
             e.printStackTrace();
         }
         System.out.println("执行异步方法结束，时间：" + System.currentTimeMillis());
+        return CompletableFuture.completedFuture("异步方法执行完成");
     }
 
     @Async("myThreadPool")
-    public void asyncMethodWithCustomThreadPool() {
+    public CompletableFuture<String> asyncMethodWithCustomThreadPool() {
         System.out.println("开始执行异步方法，线程：" + Thread.currentThread().getName() + "，时间："
                 + System.currentTimeMillis());
         try {
@@ -28,5 +31,6 @@ public class MyService {
             e.printStackTrace();
         }
         System.out.println("执行异步方法结束，时间：" + System.currentTimeMillis());
+        return CompletableFuture.completedFuture("异步方法执行完成");
     }
 }
