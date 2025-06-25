@@ -2,6 +2,8 @@ package org.ohx.springbootasync.service;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -32,5 +34,11 @@ public class MyService {
         }
         System.out.println("执行异步方法结束，时间：" + System.currentTimeMillis());
         return CompletableFuture.completedFuture("异步方法执行完成");
+    }
+
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    @Async("myThreadPool")
+    public void transactionalMethod() {
+        System.out.println("执行异步的事务方法");
     }
 }

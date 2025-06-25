@@ -37,6 +37,7 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- Spring 框架核心包-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -58,6 +59,7 @@
             <version>${spring.verion}</version>
         </dependency>
 
+        <!-- 单元测试 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>

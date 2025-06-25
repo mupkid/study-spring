@@ -2,6 +2,7 @@ package org.ohx.studyspring.service;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Aspect
+@Order(1) // 使用 @Order 设置优先级，数值越小优先级越大
 public class UserServiceProxy {
     /**
      * 相同切入点
@@ -29,7 +31,7 @@ public class UserServiceProxy {
     /**
      * 后置通知
      */
-    @After(value = "execution(* org.ohx.studyspring.service.UserService.add(..))")
+    @After(value = "pointCut()")
     public void after() {
         System.out.println("after...");
     }
